@@ -1,0 +1,113 @@
+header{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@base-color-position+0,540eac+100 */		
+	background: @base-color-position; /* Old browsers */
+	background: -moz-linear-gradient(left,  @base-color-position 0%,  @brand-primary 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  @base-color-position 0%, @brand-primary 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  @base-color-position 0%, @brand-primary 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base-color-position', endColorstr='@darken(@base-color-position, 17%)',GradientType=1 ); /* IE6-9 */
+
+	z-index: 10;
+	color: white;
+	/* position: fixed; */
+	width: 100%;
+	max-height: @height-header-position;
+	font-weight: 400;
+	
+	.triangle{
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 10px 5px 0 5px;
+		border-color: #ffffff transparent transparent transparent;
+		-webkit-transform:rotate(360deg);
+	}
+	.arianne{
+		margin-left: 20px;
+		float: left;
+		padding: 15px 15px;
+		font-size: 18px;
+		line-height: 20px;
+		height: 50px;
+	}
+	a#logout{ 
+		cursor: pointer;
+	}
+	a{
+		transition: all .1s;
+		&.iconPosition{
+			background: url(img/icon-positions.png) no-repeat 15px 58%;
+		    background-size: 30px;
+		    text-indent: 40px;
+		}
+	}
+
+	nav.navbar{
+		margin: 0px;
+		border: none;
+	}
+	.nav > li > a{
+		color: white;
+		&:focus, &:hover{
+			background: @brand-primary;
+			color: white;
+		}
+	}
+	.navbar-brand{
+		color: white;
+		&:hover{
+			background-color: @brand-primary;
+			color: white;
+		}
+	}
+	#header-loader{
+		svg{
+			rect {
+				fill: white;
+			}
+		}
+	}
+	.dropdown.open{
+		&>a{
+			background: @base-color-position;
+			&:hover, &:focus{
+				background: @brand-primary;
+			}
+		}
+		ul.dropdown-menu{
+			background: @base-color-position;
+			border: none;
+			border-radius: 0;
+			padding: 0;
+			& a{
+				color: white;
+				padding: 8px 17px 8px 16px;
+				&.wHover span{
+					padding-left: 10px;
+				}
+				&:hover, &:focus{
+					background: @brand-primary;
+				}
+			}
+		} 
+	}
+}
+
+@media (max-width: 768px){
+	header{
+		.navbar-nav{
+			float: left;
+			margin: 0;
+		}
+		.navbar-nav > li > a {
+		    padding-top: 15px;
+		    padding-bottom: 15px;
+		}
+		.navbar-nav > li {
+		    float: left;
+		}
+		.navbar-right {
+		    float: right !important;
+		    margin-right: -15px;
+		}
+}
+}
